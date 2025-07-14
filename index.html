@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description"
+          content="Barbearia Linha de Corte: especialistas em cortes masculinos, barba e estilo. Agende seu horário online."/>
+    <meta name="keywords" content="barbearia, corte de cabelo, barba, estilo masculino, agendamento online"/>
+    <meta name="author" content="Barbearia Linha de Corte"/>
+    <title>Barbearia Linha de Corte</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar">
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#agendamento">Agendamento</a></li>
+    </ul>
+</nav>
+<div class="btn-abri-menu" id="abri-menu">
+    <i class="bi bi-list"></i>
+</div>
+<div class="menu-mobile" id="menu-mobile">
+    <div class="btn-fechar-menu" id="fechar-menu">
+        <i class="bi bi-x-lg"></i>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#agendamento">Agendamento</a></li>
+        </ul>
+    </nav>
+</div>
+<script>
+    const btnAbrirMenu = document.getElementById('abri-menu');
+    const menuMobile = document.getElementById('menu-mobile');
+    const btnFecharMenu = document.getElementById('fechar-menu');
+    const overlay = document.getElementById('overlay-menu1');
+
+    // Abrir menu
+    btnAbrirMenu.addEventListener('click', () => {
+        menuMobile.classList.add('ativo');
+        overlay.classList.add('ativo');
+    });
+
+    // Fechar menu
+    btnFecharMenu.addEventListener('click', () => {
+        menuMobile.classList.remove('ativo');
+        overlay.classList.remove('ativo');
+    });
+
+    // Fechar clicando no overlay
+    overlay.addEventListener('click', () => {
+        menuMobile.classList.remove('ativo');
+        overlay.classList.remove('ativo');
+    });
+</script>
+
+
+
+<header class="hero">
+    <div class="overlay">
+        <h1>Barbearia Linha de Corte</h1>
+        <p>Seu estilo, nossa arte</p>
+        <a href="#agendamento" class="btn">Agende Agora</a>
+    </div>
+</header>
+
+<section class="sobre" id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Somos mais do que uma barbearia — somos um espaço dedicado ao cuidado e à valorização do seu estilo.
+        Com profissionais experientes e apaixonados pelo que fazem, oferecemos cortes modernos, barbas bem feitas e um
+        atendimento personalizado que respeita sua identidade. Aqui, cada detalhe é pensado para que você se sinta
+        confiante, confortável e bem atendido.</p>
+</section>
+
+<section class="diferenciais">
+    <h2>Por que escolher a Barbearia Linha de Corte?</h2>
+    <ul>
+        <li><i class="fas fa-star"></i> Atendimento com horário marcado</li>
+        <li><i class="fas fa-chair"></i> Espaço moderno e confortável</li>
+        <li><i class="fas fa-trophy"></i> Profissionais premiados e experientes</li>
+        <li><i class="fas fa-pump-soap"></i> Higiene e segurança em 1º lugar</li>
+    </ul>
+</section>
+
+<section class="servicos" id="servicos">
+    <h2>Nossos Serviços</h2>
+    <ul>
+        <li><i class="fas fa-cut"></i> Corte Masculino - R$ 30</li>
+        <li><i class="fas fa-beard"></i> Barba - R$ 20</li>
+        <li><i class="fas fa-eye"></i> Sobrancelha - R$ 10</li>
+        <li><i class="fas fa-star"></i> Pacote Completo - R$ 55</li>
+    </ul>
+</section>
+
+<section class="galeria" id="galeria">
+    <h2>Galeria</h2>
+    <div class="fotos">
+        <img src="img/4460690b314783fe1f0138027a871a0f.jpg" alt="Corte 1"/>
+        <img src="img/destaque-cortes-de-cabelo-masculino.jpg" alt="Corte 2"/>
+        <img src="img/unnamed.png" alt="Corte 3"/>
+    </div>
+</section>
+
+<section class="depoimentos">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="comentarios">
+        <blockquote>“Melhor corte da cidade, atendimento top!” — Lucas S.</blockquote>
+        <blockquote>“Ambiente limpo e barbeiro muito atencioso.” — Matheus R.</blockquote>
+        <blockquote>“Volto sempre! Preço justo e qualidade.” — Felipe M.</blockquote>
+    </div>
+</section>
+
+<section class="agendamento" id="agendamento">
+    <h2>Agende seu horário</h2>
+    <form onsubmit="return redirecionarWhatsapp()">
+        <input id="nome" type="text" placeholder="Seu nome" required/>
+        <input id="telefone" type="tel" placeholder="Telefone" required/>
+        <input id="horario" type="datetime-local" required/>
+        <button type="submit">Agendar</button>
+    </form>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/5599999999999" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    <p>&copy; 2025 Barbearia Linha de Corte. Todos os direitos reservados.</p>
+    <div>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+</footer>
+
+<script>
+    function redirecionarWhatsapp() {
+        const nome = document.getElementById("nome").value;
+        const horario = document.getElementById("horario").value;
+        const mensagem = `Olá! Meu nome é ${nome} e gostaria de agendar para ${new Date(horario).toLocaleString('pt-BR')}`;
+        const url = `https://wa.me/5599999999999?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+        return false;
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

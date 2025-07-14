@@ -1,0 +1,261 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    line-height: 1.6;
+    padding-top: 70px;
+}
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #d4a373;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1f1f1f;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.navbar a:hover {
+    color: #d4a373;
+}
+.hero {
+    background: url('img/tricoline_digital_fundo_palha_artigos_de_barbearia_50cmx1_50_2419_1_6fea038b091b608ff9a5249ccdd3ae2f.webp') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 3rem;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 90%;
+    animation: fadeInUp 1s ease both;
+}
+.overlay h1 { font-size: 3rem; }
+.overlay p { font-size: 1.3rem; margin-top: 0.5rem; }
+.btn {
+    display: inline-block;
+    background: #d4a373;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn:hover { background: #c6864a; transform: scale(1.05); }
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #1f1f1f;
+    margin-top: 1rem;
+    border-radius: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease both;
+}
+.servicos ul, .diferenciais ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+.servicos li, .diferenciais li { margin: 1rem 0; }
+.servicos i, .diferenciais i { margin-right: 0.5rem; color: #d4a373; }
+.galeria .fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: auto;
+}
+input, button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+input {
+    background-color: #2b2b2b;
+    color: white;
+}
+button {
+    background-color: #d4a373;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+button:hover { background-color: #c6864a; }
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+.depoimentos blockquote {
+    font-style: italic;
+    background-color: #2b2b2b;
+    padding: 1rem;
+    border-left: 5px solid #d4a373;
+    margin: 1rem auto;
+    max-width: 600px;
+    border-radius: 8px;
+    color: #eee;
+}
+footer {
+    background-color: #111;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+    .overlay h1 { font-size: 2rem; }
+    .overlay p { font-size: 1rem; }
+    .navbar ul { flex-direction: column; gap: 1rem; }
+}
+/* BOTÃO PARA ABRIR MENU MOBILE */
+.btn-abri-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+    display: none; /* só mostra em mobile */
+}
+
+/* MENU MOBILE */
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #1c1c1c;
+    padding: 2rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menu-mobile.ativo {
+    right: 0;
+}
+
+/* BOTÃO DE FECHAR */
+.btn-fechar-menu {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* LINKS DO MENU */
+.menu-mobile nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-mobile nav ul li {
+    margin: 1rem 0;
+}
+
+.menu-mobile nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.menu-mobile nav ul li a:hover {
+    color: #d8a964; /* dourado elegante */
+}
+
+/* OVERLAY DE FUNDO */
+.overlay-menu1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay-menu1.ativo {
+    display: block;
+}
+
+/* EXIBE O BOTÃO DE MENU APENAS EM TELAS PEQUENAS */
+@media screen and (max-width: 768px) {
+    .btn-abri-menu {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+    }
+}
